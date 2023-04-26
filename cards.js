@@ -84,6 +84,8 @@ $("#new-deck").on("click", function () {
 });
 
 function getCard() {
+  const { num, otherNum } = randomNum();
+  console.log(num, "<num", otherNum, "<otherNUM");
   deckCount--;
   console.log(deckCount);
 
@@ -97,14 +99,13 @@ function getCard() {
       $("#message").fadeOut();
     }, 4000);
   }
-  const num = randomNum();
 
   axios
     .get(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`)
     .then((res) => {
       const card = res.data.cards[0].image;
       $("#card-container").append(
-        `<img src="${card}" alt="card" id="images" class="absolute flex items-center justfiy-center top-40" style="transform: rotate(${num}deg)"/>`
+        `<img src="${card}" alt="card" id="images" class="absolute flex items-center justfiy-center" style="transform: rotate(${num}deg); top: ${otherNum}px;"/>`
       );
     })
 
@@ -115,6 +116,7 @@ function getCard() {
 }
 
 function randomNum() {
-  const num = Math.floor(Math.random() * 90 - 45);
-  return num;
+  const num = Math.floor(Math.random() * 70 - 35);
+  const otherNum = Math.floor(Math.random() * 45) + 170;
+  return { num, otherNum };
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-green-700">
+    <div id="messages"></div>
+
+    <div id="container" class="flex max-w-96 justify-center items-center">
+      <button
+        id="new-deck"
+        class="bg-blue-500 hover:bg-blue-700 p-2 rounded my-10 font-bold text-white mr-2"
+      >
+        New Deck</button
+      ><button
+        id="card-button"
+        class="bg-blue-500 hover:bg-blue-700 p-2 rounded my-10 font-bold text-white ml-2"
+      >
+        draw a card
+      </button>
+    </div>
+
+    <div
+      id="card-container"
+      class="flex max-w-96 justify-center items-center"
+    ></div>
+    <script src="cards.js"></script>
+  </body>
+</html>
